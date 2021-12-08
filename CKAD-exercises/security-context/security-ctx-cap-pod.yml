@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: sec-nginx
+  name: sec-cap-nginx
+spec:
+  securityContext:
+    capabilities:
+      add: ["NET_ADMIN", "SYS_TIME"]
+  containers:
+  - image: nginx
+    name: sec-nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}

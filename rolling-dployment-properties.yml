@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rolling-deployment
+spec:
+  strategy:
+    rollingUpdate:
+# control the max of how many replicas will be created initially when rolling update happens.
+      maxSurge: 3
+# control the max of how many replicas will be considered unavailable during the rolling update. 
+      maxUnavailable: 2
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.1
+        ports:
+        - containerPort: 80

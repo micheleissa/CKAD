@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sunny
+  name: sunny
+  namespace: sun
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: sunny
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sunny
+    spec:
+      containers:
+      - image: nginx:1.17.3-alpine
+        name: nginx
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}

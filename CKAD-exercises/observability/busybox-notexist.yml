@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busybox-error
+  name: busybox-error
+spec:
+  containers:
+  - args:
+    - /bin/sh
+    - ls /notexist
+    image: busybox:stable
+    imagePullPolicy: IfNotPresent
+    name: busybox-error
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}

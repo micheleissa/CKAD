@@ -1,0 +1,32 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"oauth-provider","namespace":"gem"},"spec":{"ports":[{"nodePort":30080,"port":80,"protocol":"TCP","targetPort":80}],"selector":{"role":"oauth"},"type":"NodePort"}}
+    creationTimestamp: "2021-11-29T00:52:13Z"
+    name: oauth-provider
+    namespace: gem
+    resourceVersion: "498"
+    selfLink: /api/v1/namespaces/gem/services/oauth-provider
+    uid: 976a5dab-50ae-11ec-9b93-0220639176b7
+  spec:
+    clusterIP: 10.104.29.78
+    externalTrafficPolicy: Cluster
+    ports:
+    - nodePort: 30080
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    selector:
+      role: oauth
+    sessionAffinity: None
+    type: NodePort
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

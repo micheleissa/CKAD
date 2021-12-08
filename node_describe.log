@@ -1,0 +1,80 @@
+Name:               minikube
+Roles:              master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=minikube
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/master=
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Sat, 12 Sep 2020 15:43:28 -0500
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  minikube
+  AcquireTime:     <unset>
+  RenewTime:       Sun, 20 Sep 2020 00:38:20 -0500
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Sun, 20 Sep 2020 00:38:28 -0500   Sat, 12 Sep 2020 15:43:20 -0500   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Sun, 20 Sep 2020 00:38:28 -0500   Sat, 12 Sep 2020 15:43:20 -0500   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Sun, 20 Sep 2020 00:38:28 -0500   Sat, 12 Sep 2020 15:43:20 -0500   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Sun, 20 Sep 2020 00:38:28 -0500   Sat, 12 Sep 2020 15:43:20 -0500   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.64.3
+  Hostname:    minikube
+Capacity:
+  cpu:                2
+  ephemeral-storage:  16954240Ki
+  hugepages-2Mi:      0
+  memory:             1985752Ki
+  pods:               110
+Allocatable:
+  cpu:                2
+  ephemeral-storage:  16954240Ki
+  hugepages-2Mi:      0
+  memory:             1985752Ki
+  pods:               110
+System Info:
+  Machine ID:                 7c71f882f07a4cc185ba7c130b47f565
+  System UUID:                4efa11ea-0000-0000-80a3-acbc327bad1d
+  Boot ID:                    67d1e5dc-31d6-4bc7-9aee-450346c6ee81
+  Kernel Version:             4.19.76
+  OS Image:                   Buildroot 2019.02.6
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://18.9.9
+  Kubelet Version:            v1.16.2
+  Kube-Proxy Version:         v1.16.2
+Non-terminated Pods:          (18 in total)
+  Namespace                   Name                                CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                                ------------  ----------  ---------------  -------------  ---
+  default                     counter                             0 (0%)        0 (0%)      0 (0%)           0 (0%)         18m
+  default                     multi-container-pod                 0 (0%)        0 (0%)      0 (0%)           0 (0%)         6d7h
+  default                     my-configmap-pod                    0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d8h
+  default                     my-configmap-volume-pod             0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d8h
+  default                     my-liveness-pod                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         34m
+  default                     my-pod                              0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d8h
+  default                     my-readiness-pod                    0 (0%)        0 (0%)      0 (0%)           0 (0%)         32m
+  default                     my-secret-pod                       0 (0%)        0 (0%)      0 (0%)           0 (0%)         6d10h
+  default                     my-serviceaccount-pod               0 (0%)        0 (0%)      0 (0%)           0 (0%)         6d9h
+  kube-system                 coredns-5644d7b6d9-b2vsk            100m (5%)     0 (0%)      70Mi (3%)        170Mi (8%)     7d8h
+  kube-system                 coredns-5644d7b6d9-xptt5            100m (5%)     0 (0%)      70Mi (3%)        170Mi (8%)     7d8h
+  kube-system                 etcd-minikube                       0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d8h
+  kube-system                 kube-addon-manager-minikube         5m (0%)       0 (0%)      50Mi (2%)        0 (0%)         7d8h
+  kube-system                 kube-apiserver-minikube             250m (12%)    0 (0%)      0 (0%)           0 (0%)         7d8h
+  kube-system                 kube-controller-manager-minikube    200m (10%)    0 (0%)      0 (0%)           0 (0%)         7d8h
+  kube-system                 kube-proxy-8b9d9                    0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d8h
+  kube-system                 kube-scheduler-minikube             100m (5%)     0 (0%)      0 (0%)           0 (0%)         7d8h
+  kube-system                 storage-provisioner                 0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d8h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                755m (37%)  0 (0%)
+  memory             190Mi (9%)  340Mi (17%)
+  ephemeral-storage  0 (0%)      0 (0%)
+Events:              <none>

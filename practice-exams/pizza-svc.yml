@@ -1,0 +1,28 @@
+#First incorrect trial
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: pizza-service
+#   namespace: pizza
+# spec:
+#   type: NodePort
+#   ports:
+#   - port: 30080
+#     targetPort: 80
+#   selector:
+#     app: pizza-app
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pizza-service
+  namespace: pizza
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: 30080
+    protocol: TCP
+  selector:
+    app: pizza-app

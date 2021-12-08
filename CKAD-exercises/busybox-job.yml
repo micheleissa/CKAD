@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: busyboxjob
+spec:
+  template:
+    metadata:
+    spec:
+      containers:
+      - command: ['echo hello', 'slee 30', 'echo world']
+        image: busybox
+        name: busyboxjob
+        resources: {}
+      restartPolicy: Never
+status: {}

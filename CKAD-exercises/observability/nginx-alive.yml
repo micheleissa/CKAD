@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-alive
+  name: nginx-alive
+spec:
+  containers:
+  - image: nginx
+    name: nginx-alive
+    livenessProbe:
+      exec:
+        command:
+        - ls
+      initialDelaySeconds: 5
+      periodSeconds: 5 
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
