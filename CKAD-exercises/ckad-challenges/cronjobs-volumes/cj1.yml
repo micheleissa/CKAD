@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cj1
+spec:
+  jobTemplate:
+    metadata:
+      name: cj1
+    spec:
+      parallelism: 2
+      template:
+        metadata:
+        spec:
+          containers:
+          - image: bash
+            command: [ "bash", "-c", "hostname >> /tmp/vol/storage"]
+            name: cj1
+            volumeMounts:
+            - mountPath: /tmp/vol
+              name: my-volume
+            resources: {}
+          restartPolicy: OnFailure
+          volumes: 
+          - name: my-volume
+            persistentVolumeClaim:
+              claimName: my-pvc
+  schedule: '*/1 * * * *'
+  successfulJobsHistoryLimit: 4
+status: {}

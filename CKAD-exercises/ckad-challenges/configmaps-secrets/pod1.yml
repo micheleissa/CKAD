@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pod1
+  name: pod1
+spec:
+  containers:
+  - command: ["/bin/sh"]
+    args: ["-c", "sleep 3600"]
+    image: bash
+    imagePullPolicy: IfNotPresent
+    name: pod1
+    volumeMounts:
+    - name: sec-vol
+      mountPath: tmp/secret1
+    resources: {}
+    envFrom:
+    - configMapRef:
+        name: my-config
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  volumes:
+  - name: sec-vol
+    secret:
+      secretName: secret1
+status: {}

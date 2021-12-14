@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: bsh
+  name: bsh
+spec:
+  containers:
+  - args:
+    - bin/sh
+    - -c
+    - hostname > /tmp/hostname && sleep 1d
+    image: bash
+    imagePullPolicy: IfNotPresent
+    name: bsh
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
